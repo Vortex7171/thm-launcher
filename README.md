@@ -1,6 +1,6 @@
 # THM Launcher
 
-A black-and-white Minecraft launcher for [The Highway Men](https://highwaymen.cc) and 6b6t. Sign in, press Play, and the THM setup (Fabric, AnarchyMod, Meteor, Baritone, THM Addons) installs itself.
+A custom themed Minecraft launcher for [The Highway Men](https://highwaymen.cc) and 6b6t. Sign in, press Play, and the THM setup (Fabric, AnarchyMod, Meteor, Baritone, THM Addons) installs itself.
 
 ## Download (Windows)
 
@@ -28,21 +28,3 @@ After the first install, the launcher updates itself. You can turn that off in *
 Open an [issue](https://github.com/Vortex7171/thm-launcher/issues) and say what happened. Early version, so bugs are expected.
 
 ---
-
-## For developers
-
-**Run while editing:** `npm install`, `npm run icons`, `npm run tauri dev`
-
-**Build an installer locally:** double-click `build.bat`. The installer is in `src-tauri/target/release/bundle/nsis/`.
-
-**One-time updater setup**
-1. `npm run tauri signer generate -- -w "%USERPROFILE%\.tauri\thm-launcher.key"` (blank password). Back the key up privately and never commit it.
-2. `npm run setup-updater` (asks for `username/repo`).
-3. Add the repo secret `TAURI_SIGNING_PRIVATE_KEY` (contents of the `.key` file) and set Actions workflow permissions to read and write.
-
-**Release an update**
-1. `npm run release -- 0.1.1`
-2. `git add .`, `git commit -m "v0.1.1"`, `git tag v0.1.1`, `git push`, `git push --tags`
-3. GitHub builds, signs and publishes the release. Installed launchers pick it up automatically.
-
-Component download links are in `src-tauri/thm-manifest.json`.
