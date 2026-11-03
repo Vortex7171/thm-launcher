@@ -10,7 +10,7 @@ export default function Settings() {
   const f = (k: keyof S) => (e: React.ChangeEvent<HTMLInputElement>) => setS({ ...s, [k]: e.target.value });
   const save = async () => { try { await api.saveSettings(s); setMsg("Saved."); } catch (e) { setMsg(errText(e)); } };
   return (
-    <div>
+    <div className="settings">
       <header className="head"><div><h1>SETTINGS</h1><p className="muted">THM Launcher {v}</p></div><button className="btn primary" onClick={save}>Save</button></header>
       {msg && <div className="banner">{msg}</div>}
       <div className="card"><h3>Launcher updates</h3>
