@@ -1,0 +1,58 @@
+{
+  "version": 2,
+  "name": "THM Default",
+  "minecraft": "1.21.11",
+  "server": "play.6b6t.org",
+  "note": "Components download automatically on first Play. Edit URLs here (or in Settings > THM sources) if they change.",
+  "slots": [
+    {
+      "id": "fabric-api",
+      "name": "Fabric API",
+      "source": "modrinth",
+      "project": "fabric-api",
+      "match": "fabric-api",
+      "required": true,
+      "info": "Installed from Modrinth with SHA-1 verification."
+    },
+    {
+      "id": "anarchymod",
+      "name": "6b6t AnarchyMod",
+      "source": "url",
+      "url": "https://www.6b6t.org/mod/dl/1.5.0/anarchymod-mc-1.21.11-1.5.0.jar?src=direct",
+      "match": "anarchy",
+      "required": true,
+      "link": "https://www.6b6t.org/mod",
+      "info": "Official 6b6t mod, version 1.5.0 for Minecraft 1.21.11."
+    },
+    {
+      "id": "meteor",
+      "name": "Meteor Client",
+      "source": "url",
+      "url": "https://meteorclient.com/api/download?version=1.21.11",
+      "match": "meteor",
+      "required": true,
+      "link": "https://meteorclient.com",
+      "info": "Latest build for 1.21.11 from meteorclient.com."
+    },
+    {
+      "id": "baritone",
+      "name": "Baritone (Meteor)",
+      "source": "url",
+      "url": "https://meteorclient.com/api/downloadBaritone?version=1.21.11",
+      "match": "baritone",
+      "required": true,
+      "link": "https://meteorclient.com",
+      "info": "Meteor's Baritone build for 1.21.11."
+    },
+    {
+      "id": "thm-addons",
+      "name": "THM Addons",
+      "source": "url",
+      "url": "https://github.com/Magnus-Krill/THM-Addons/releases/download/release0.2.9/THM-Addons-0.2.9.jar",
+      "match": "thm",
+      "required": true,
+      "link": "https://github.com/Magnus-Krill/THM-Addons",
+      "info": "THM Addons 0.2.9."
+    }
+  ]
+}

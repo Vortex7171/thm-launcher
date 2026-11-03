@@ -1,0 +1,40 @@
+[package]
+name = "thm-launcher"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "thm_launcher_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-updater = "2"
+tauri-plugin-process = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "process", "io-util", "fs", "sync", "time"] }
+futures = "0.3"
+sha1 = "0.10"
+sha2 = "0.10"
+md5 = "0.7"
+hex = "0.4"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+flate2 = "1"
+tar = "0.4"
+uuid = { version = "1", features = ["v4"] }
+chrono = "0.4"
+once_cell = "1"
+walkdir = "2"
+keyring = { version = "3", features = ["apple-native", "windows-native", "sync-secret-service"] }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
