@@ -11,6 +11,7 @@ pub fn run() {
             let dir = app.path().app_data_dir()?;
             std::fs::create_dir_all(&dir)?;
             store::DIR.set(dir).ok();
+            if let Some(w) = app.get_webview_window("main") { w.set_theme(Some(tauri::Theme::Dark)).ok(); }
             instances::ensure_default().ok();
             Ok(())
         })
